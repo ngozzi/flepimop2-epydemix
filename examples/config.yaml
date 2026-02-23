@@ -1,0 +1,26 @@
+---
+backend:
+  - module: 'csv'
+engine:
+  - module: 'wrapper'
+    script: './example_engine.py'
+systems:
+  my_system:
+    module: 'epydemix'
+    test-phrase: 'foobar'
+simulate:
+  example:
+    backend: 'default'
+    engine: 'default'
+    system: 'my_system'
+    times: [1, 2, 3, 4]
+parameters:
+  s0:
+    module: 'fixed'
+    value: 1000
+  i0:
+    module: 'fixed'
+    value: 1
+  r0:
+    module: 'fixed'
+    value: 0
